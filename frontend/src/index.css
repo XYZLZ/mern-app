@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary:#6468FF;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    
+}
+
+/* ? Landing */
+
+.landing__btn{
+    @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800
+}
+
+
+/* ? header after login */
+.header__home {
+    @apply w-full flex justify-between items-center shadow-md bg-white sm:px-8 py-4 border-b-[#e6ebf4]
+}
+
+/* ? Form register and login */
+
+.form__label{
+   @apply block text-sm  text-gray-700 dark:text-white
+}
+
+.form__input {
+    @apply w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)]
+}
+
+.form__btn {
+    @apply w-full border bg-[var(--primary)] px-3 py-2 rounded-lg shadow-sm focus:outline-none text-center text-white hover:opacity-75
+}
+
+.error_msg{
+    @apply text-center bg-red-500 mt-7 rounded-sm px-3 py-2 text-white
+}
+
+.success_msg{
+    @apply text-center bg-green-500 mt-7 rounded-sm px-3 py-2 text-white
+}
+.form__btn-danger{
+    @apply w-full border bg-red-500 px-3 py-2 rounded-lg shadow-sm focus:outline-none text-center text-white hover:opacity-75
+}
+
+/* ? Dashboard */
+
+.header__btn {
+    @apply font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md
+}
+
+@media (max-width:1270px) {
+    .reduce_width {
+        @apply w-[400px] h-[400px]
+    }
+}
+
+@media (max-width:480px){
+    .landing__pricing{
+        @apply flex-col
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .card:nth-child(7n + 1) {
+        grid-column: auto/span 2;
+        grid-row: auto/span 2;
+    }
+}
+
+.prompt::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+.prompt::-webkit-scrollbar-thumb {
+  background-color: #666e75;
+  border-radius: 5px;
+}

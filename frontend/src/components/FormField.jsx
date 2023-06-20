@@ -1,0 +1,34 @@
+import React from 'react'
+import {categories} from '../constant'
+
+
+
+const FormField = ({ isMultiple, LabelName, type, name, placeholder, isSurpriseMe, handleSurpriseMe , handleChange, value, isDisabled,}) => {
+    
+  return (
+    <div>
+      <div className='flex items-center gap-2 mb-2'>
+        <label htmlFor={name} className='block text-sm font-medium text-gray-900'>{LabelName}</label>
+        {isSurpriseMe && (
+          <button type='button' onClick={handleSurpriseMe} className='font-semibold text-xs bg-[#ECECF1] py-1 px-2 rounded-[5px] text-black'>Surprise me</button>
+        )}
+      </div>
+      
+      {isDisabled ? (
+          <input type={type} id={name} name={name} onChange={handleChange} value={value} placeholder={placeholder} required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3' disabled  />
+          ): isMultiple ?(
+            <select required name={name} id={name} onChange={handleChange} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3'>
+              {categories.map(category => <option key={category} value={category}>{category}</option>)}
+            </select>
+            ): type == 'file' ?(
+              <input type={type} id={name} name={name} onChange={handleChange} value={value} placeholder={placeholder} required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3' accept='.jpg, .png, .jpeg'/>
+              ): (
+            <input type={type} id={name} name={name} onChange={handleChange} value={value} placeholder={placeholder} required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3'  />
+
+          )}
+
+    </div>
+  )
+}
+
+export default FormField
