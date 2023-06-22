@@ -38,7 +38,7 @@ app.use('/api/v1/payment', paymentRoutes);
 if (process.env.NODE_ENV == 'production') {
     app.use(express.static('frontend/dist'))
     app.get('*', (req, res)=>{
-        res.sendFile(resolve(__dirname, "../", "frontend", "dist", "index.html"))
+        res.sendFile(resolve(__dirname, "../", "dist", "index.html"))
     })
 
 }
