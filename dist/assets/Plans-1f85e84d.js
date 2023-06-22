@@ -1,0 +1,1 @@
+import{j as i,F as t,P as r}from"./index-9105bffc.js";import{P as n}from"./Pricing-6348de09.js";import"./done-9f03b13b.js";const l=()=>i(t,{children:i(r,{options:{"client-id":"AXrzil9XOTJH4KFhZTObCEmhwYEwL16t-pAXGuEFuiUgHXUFwUVhArBRu47vf4R6Jw0MlMflT6g2xQtp",currency:"USD",intent:"capture"},children:i(n,{})})});export{l as default};
